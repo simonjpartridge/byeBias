@@ -3,6 +3,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 from scraper import default
+from scraper import articleProcess
 
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
@@ -14,9 +15,9 @@ def hello():
     return 'Hello World!'
 
 
-@app.route('/proc')
+@app.route('/processArticle')
 def lala():
-    return "proc"
+    return articleProcess.processArticle()
 
 
 @app.route('/defa')
