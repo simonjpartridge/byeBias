@@ -17,7 +17,9 @@ def hello():
     #
     # art.download()
     # art.parse()
-    return "hello " #art.text
+    return "hello "
+
+    #art.text
 
 
     # return 'Hello World!'
