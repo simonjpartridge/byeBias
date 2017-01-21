@@ -13,18 +13,20 @@ app.config['DEBUG'] = True
 def hello():
     """Return a friendly HTTP greeting."""
 
+    art = article(url="http://www.huffingtonpost.com/entry/trump-cut-mortgage-insurance_us_5882765ee4b0e3a73568f0a4")
 
-    return 'Hello World!'
+    art.download()
+    art.parse()
+    return art.text
+
+
+    # return 'Hello World!'
 
 
 @app.route('/proc')
 def processArticle():
     return "fvidfvmdfmv"
-    # art = article(url="http://www.huffingtonpost.com/entry/trump-cut-mortgage-insurance_us_5882765ee4b0e3a73568f0a4")
     #
-    # art.download()
-    # art.parse()
-    # print(art.text)
 
 
 @app.errorhandler(404)
