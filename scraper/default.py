@@ -1,5 +1,5 @@
 from flask import Flask
-from newspaper import article
+# from newspaper import article
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -13,11 +13,11 @@ app.config['DEBUG'] = True
 def hello():
     """Return a friendly HTTP greeting."""
 
-    art = article(url="http://www.huffingtonpost.com/entry/trump-cut-mortgage-insurance_us_5882765ee4b0e3a73568f0a4")
-
-    art.download()
-    art.parse()
-    return art.text
+    # art = article(url="http://www.huffingtonpost.com/entry/trump-cut-mortgage-insurance_us_5882765ee4b0e3a73568f0a4")
+    #
+    # art.download()
+    # art.parse()
+    return "hello " #art.text
 
 
     # return 'Hello World!'
@@ -26,7 +26,7 @@ def hello():
 @app.route('/proc')
 def processArticle():
     return "fvidfvmdfmv"
-    #
+
 
 
 @app.errorhandler(404)
