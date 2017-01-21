@@ -4,7 +4,7 @@ threadsafe: yes
 
 handlers:
 - url: .*
-  script: ./scraper/articleProcess.py
+  script: ./scraper/default.py
 
 #libraries:
 #- name: newspaper
