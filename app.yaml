@@ -1,0 +1,13 @@
+runtime: python35
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: .*
+  script: ./scraper/articleProcess.py
+
+#libraries:
+#- name: newspaper
+#  version: "2.6"
+#- name: markupsafe
+#  version: "0.15"

@@ -1,5 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+import newspaper
+
+
+
 
 
 html_page = requests.get("http://www.allsides.com")
@@ -15,21 +19,22 @@ for link in news_links:
 
 
 # Obtaining article text
-# articles = []
+articles = []
 #
-# for link in links:
-#     html_page = requests.get(link)
-#     soup = BeautifulSoup(html_page.text, "lxml")
-#     paragraphs = soup.findAll('p')
-#
-#     article = ""
-#     for p in paragraphs:
-#         article = article + p.text
-#
-#     articles.append(article)
-#
-#
-# print(articles)
+for link in links:
+
+    html_page = requests.get(link)
+    soup = BeautifulSoup(html_page.text, "lxml")
+    paragraphs = soup.findAll('p')
+
+    article = ""
+    for p in paragraphs:
+        article = article + p.text
+
+    articles.append(article)
+
+
+print(articles)
 
 
 # Obtaining articles labels
@@ -44,4 +49,4 @@ for label in news_labels:
     labels.append(image_name)
 
 
-# print(labels)
+print(labels)
